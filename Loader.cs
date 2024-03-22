@@ -41,6 +41,14 @@ namespace RiskOfRain2Internal
             {
                 Hacks.EnableChestsESP();
             }
+            if (GUI.Button(new Rect(27, buttonStart + (buttonBase * 8), 196, 40), "All chests free"))
+            {
+                Hacks.AllChestFree();
+            }
+            if (GUI.Button(new Rect(27, buttonStart + (buttonBase * 9), 196, 40), "Chests Tier3 Chance 100%"))
+            {
+                Hacks.ChestsTier3Chance();
+            }
 
             if (Hacks.teleportFinderEnabled)
             {
@@ -64,6 +72,12 @@ namespace RiskOfRain2Internal
                 GameObject[] chests = Hacks.GetGameObjectsByName("Chest");
                 
                 foreach (GameObject chest in chests) {
+                    ChestBehavior chestBehavior = chest.GetComponent<ChestBehavior>();
+                    if (!chestBehavior) continue;
+
+                    PurchaseInteraction purchaseInteraction = chest.GetComponent<PurchaseInteraction>();
+                    if (!purchaseInteraction.available) continue;
+
                     GUIHelper.DrawESPBox(chest.transform.position, Color.blue, 1f);
                     GUIHelper.DrawESPLine(chest.transform.position, Color.blue, 1f);
                 }

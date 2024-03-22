@@ -143,5 +143,41 @@ namespace RiskOfRain2Internal
             chestsESPEnabled = !chestsESPEnabled;
         }
 
+        public static void AllChestFree()
+        {
+
+            GameObject[] chests = Hacks.GetGameObjectsByName("Chest");
+
+            foreach (GameObject chest in chests)
+            {
+                ChestBehavior chestBehavior = chest.GetComponent<ChestBehavior>();
+                if (!chestBehavior) continue;
+
+                PurchaseInteraction purchaseInteraction = chest.GetComponent<PurchaseInteraction>();
+                if (!purchaseInteraction.available) continue;
+
+                purchaseInteraction.cost = 0;
+            }
+            
+        }
+        public static void ChestsTier3Chance()
+        {
+
+            GameObject[] chests = Hacks.GetGameObjectsByName("Chest");
+
+            foreach (GameObject chest in chests)
+            {
+                ChestBehavior chestBehavior = chest.GetComponent<ChestBehavior>();
+                if (!chestBehavior) continue;
+
+                PurchaseInteraction purchaseInteraction = chest.GetComponent<PurchaseInteraction>();
+                if (!purchaseInteraction.available) continue;
+
+                chestBehavior.tier3Chance = 100;
+            }
+
+        }
+        
+
     }
 }
