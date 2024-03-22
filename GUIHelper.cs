@@ -23,17 +23,15 @@ namespace RiskOfRain2Internal
 			var size = StringStyle.CalcSize(content);
 			var upperLeft = centered ? position - size / 2f : position;
 			GUI.Label(new Rect(upperLeft, size), content);*/
-			GUIStyle style = GUI.skin.label; // Utilizza lo stile di default per le etichette GUI
+			GUIStyle style = GUI.skin.label; 
 			GUIContent content = new GUIContent(label);
 			Vector2 size = style.CalcSize(content);
 
-			// Se il testo deve essere centrato, calcola la posizione in modo che il centro del testo sia a "position"
 			if (centered)
 			{
 				position.x -= size.x / 2f;
 				position.y -= size.y / 2f;
 			}
-			// Se il testo deve essere allineato in alto a sinistra, non effettua alcun aggiustamento
 			else if (!alignTopLeft)
 			{
 				position.x -= size.x / 2f;
