@@ -120,4 +120,3 @@ D:\Projects\RiskOfRain2Internal\bin\Debug\SimpleJSON.dll
 D:\Projects\RiskOfRain2Internal\bin\Debug\Rewired_CSharp.dll
 D:\Projects\RiskOfRain2Internal\bin\Debug\HGSignup.dll
 D:\Projects\RiskOfRain2Internal\bin\Debug\Rewired_Windows.dll
-D:\Projects\RiskOfRain2Internal\obj\Debug\RiskOfRain2Internal.csproj.AssemblyReference.cache
